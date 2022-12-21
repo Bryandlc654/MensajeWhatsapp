@@ -1,6 +1,17 @@
-function sendWhatsAppMessage(phoneNumber, message) {
-  window.open(`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`);
+const phoneInputField = document.querySelector("#phone");
+const phoneInput = window.intlTelInput(phoneInputField, {
+  utilsScript:
+    "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+});
+
+function process(event) {
+ event.preventDefault();
+
+ const phoneNumber = phoneInput.getNumber();
+ const message = document.getElementById('message').value;
+ window.open(`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`);
 }
+
 
 let form = document.querySelector("form");
 

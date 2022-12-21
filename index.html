@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
- 
-</head>
-<body class="body">
-  <main>
-    <section class="container">
-      <form>
-      <label for="phoneNumber">Número de teléfono:</label><br>
-      <input type="text" id="phoneNumber" name="phoneNumber"><br>
-      <label for="message">Mensaje:</label><br>
-      <input type="text" id="message" name="message"><br><br>
-      <button type="button" onclick="sendWhatsAppMessage(document.getElementById('phoneNumber').value, document.getElementById('message').value)">Enviar mensaje</button>
-      </form>
-    </section>
-  </main>
-</body>
-<script src="./js/script.js"></script>
+ <head>
+   <title>International telephone input</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+   />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+ </head>
+ <body>
+
+  <div class="container">
+    <form id="login" onsubmit="process(event)">
+      <p>Celular</p>
+      <input id="phone" type="tel" name="phone" /><br>
+      <p>Mensaje:</p>
+      <input type="text" id="message" name="message"> <br>
+      <input type="submit" class="btn" value="Verify" />  <br>
+    </form>
+   </div>
+   
+   <script src="./js/script.js"></script>
+   <script src="./js/ip.js"></script>
+   <script src="./js/formatoCodigo.js"></script>
+ </body>
 </html>
